@@ -34,3 +34,29 @@ cond do
   true ->
     IO.puts "This is always true (equivalent to else)"
 end
+
+cond do
+  hd([1, 2, 3]) ->
+    IO.puts "1 is considered as true"
+end
+
+# If
+if nil do
+  IO.puts "This works!"
+else
+  IO.puts "This will"
+end
+
+unless nil do
+  IO.puts "unless"
+end
+
+x = 1
+
+x = if true do
+  x + 1
+else
+  x
+end
+
+IO.puts x
