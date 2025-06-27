@@ -21,7 +21,7 @@ IO.puts f.(-1, 3)
 
 
 # Cond
-#case is useful when you need to match against different values. However, in many circumstances, we want to check different conditions and find the first one that does not evaluate to nil or false. In such cases, one may use cond:
+# scase is useful when you need to match against different values. However, in many circumstances, we want to check different conditions and find the first one that does not evaluate to nil or false. In such cases, one may use cond:
 cond do
   2 + 2 == 5 ->
     IO.puts "This will not be true"
@@ -60,3 +60,12 @@ else
 end
 
 IO.puts x
+
+case { 1, 2, 3 } do
+  { 4, 5, 6 } ->
+    IO.puts "This clause won't match"
+  { 1, child_age, 3 } when child_age == 2 ->
+    IO.puts "This clause will match and bind x to 2 in this clause"
+  _ ->
+    IO.puts "This clause would match any value"
+end
